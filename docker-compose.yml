@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  pubsub:
+    image: 'pubsub-emulator:latest'
+    build:
+      context: .
+    environment:
+      - PUBSUB_PROJECT_ID=${PUBSUB_PROJECT_ID}
+      - PUBSUB_CONFIG=${PUBSUB_CONFIG}
+    ports:
+      - '8432:8432'
